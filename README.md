@@ -2,7 +2,7 @@
 
 在 Codex、Claude Code 和 Cursor 中使用同一套个人工作流。遇到需要规划或实现的新需求，先复述目标、范围和预期结果，等用户确认，再写计划、实现和验证。需求有实质变化时重新确认。普通问答和只读查询可以直接处理。
 
-流程维护在一份 [SKILL.md](skills/personal-agent-workflow/SKILL.md) 中，使用 [Agent Skills 格式](https://agentskills.io/specification)。
+流程使用 [Agent Skills 格式](https://agentskills.io/specification)，入口是 [SKILL.md](skills/personal-agent-workflow/SKILL.md)。需求复述和交付验证所用的 pstack 参考随技能目录一同安装。
 
 ## 安装
 
@@ -38,3 +38,14 @@ cp -R skills/personal-agent-workflow ~/.claude/skills/
 ```text
 遇到需要规划或实现的新需求，先加载并遵循 personal-agent-workflow 技能。复述需求后等待我明确确认，再开始设计、写计划或实现。单纯问答和只读查询可以直接处理。
 ```
+
+## 上游参考
+
+以下文件按原文收录自 [pstack `c3464c1`](https://github.com/backnotprop/pstack/tree/c3464c11c60b1352d5e8f5f0428a3a6943837568)，随目录提供 [MIT 许可](skills/personal-agent-workflow/references/pstack/LICENSE)。
+
+| 参考 | 使用时机 |
+| --- | --- |
+| [`in-your-own-words`](skills/personal-agent-workflow/references/pstack/in-your-own-words.md) | 首次复述或重新确认需求 |
+| [`principle-prove-it-works`](skills/personal-agent-workflow/references/pstack/principle-prove-it-works.md) | 汇报前验证实际交付结果 |
+
+安装整个 `skills/personal-agent-workflow/` 目录后，调用 `personal-agent-workflow` 即可。两份参考由主技能按阶段读取。
